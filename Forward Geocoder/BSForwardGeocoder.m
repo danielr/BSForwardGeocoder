@@ -120,7 +120,7 @@
         if (!parseError && parser.statusCode == G_GEO_SUCCESS) {
             [self.delegate forwardGeocodingDidSucceed:self withResults:parser.results];
         }
-        else if ([self.delegate respondsToSelector:@selector(forwardGeocoderDidFail:withErrorMessage:)]) {
+        else if ([self.delegate respondsToSelector:@selector(forwardGeocodingDidFail:withErrorCode:andErrorMessage:)]) {
             [self.delegate forwardGeocodingDidFail:self withErrorCode:parser.statusCode andErrorMessage:[parseError localizedDescription]];
         }        
     }
